@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
+  
   def show
     @user = User.find(params[:id])
-  # ここに該当ユーザの投稿一覧が表示されるようにする
   end
 
   def edit
