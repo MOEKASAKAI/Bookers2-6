@@ -15,10 +15,13 @@
       <%= link_to "Books", books_path %>
     </li>
     <li>
+      <%= link_to "Users", users_path %>
+    </li>
+    <li>
       <%= link_to "logout", destroy_user_session_path, method: :delete %>
     </li>
     <li>
-      <%= link_to 'mypage', user_path(current_user.id) %>
+      <%= link_to "mypage", user_path(current_user.id) %>
     </li>
     <% else %>
     <li>
