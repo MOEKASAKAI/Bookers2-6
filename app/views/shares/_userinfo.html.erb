@@ -11,6 +11,19 @@
       <th>introduction</th>
       <th><%= user.introduction %></th>
     </tr>
+    <tr>
+      <th>
+      <%= "follows#{user.follower.count}" %>
+      </th>
+    </tr>
+    <tr>
+      <th>
+      <%= "followers:#{user.followed.count}" %>
+      </th>
+    </tr>
+    <th>
+      <%= render 'shares/follow_button', user: user %>
+    </th>
   </tbody>
 </table>
 
