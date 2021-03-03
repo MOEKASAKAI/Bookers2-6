@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   get 'home/about' => "homes#about"
   post 'follow/:id' => 'relationships#follow', as:'follow'
   post 'unfollow/:id' => 'relationships#unfollow', as:'unfollow'
-  resources :users, only: [:index, :show, :edit, :update] 
+  resources :users, only: [:index, :show, :edit, :update]  do
+    member do
+      get :following, :followers
+    end
+  end
   resources :books, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
     resource :favorites, only: [:create, :destroy]
     resources :book_comments, only: [:create, :destroy]

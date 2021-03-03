@@ -11,9 +11,9 @@
       <table class="table">
         <thead>
           <tr>
-              <th>image</th>
-              <th>name</th>
-              <th></th>
+            <th>image</th>
+            <th>name</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -26,10 +26,10 @@
               <%= user.name %>
             </td>
             <td>
-              <%= "フォロー数:#{user.follower.count}" %>
+              <p>フォロー数:</p><%= user.follower.count %>
             </td>
             <td>
-              <%= "フォロワー数:#{user.followed.count}" %>
+              <p>フォロワー数:</p><%= user.followed.count %>
             </td>
             <td>
               <%= render 'shares/follow_button', user: user %>

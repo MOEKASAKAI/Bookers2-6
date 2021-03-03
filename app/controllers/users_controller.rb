@@ -31,6 +31,24 @@ class UsersController < ApplicationController
     end
   end
   
+  def following
+    @title ="Following"
+    @user = User.find(params[:id])
+    @users = @user.follower
+    @following_count = Relationship.all.count(:followed_id)
+    @followers_count = Relationship.all.count(:follower_id)
+    render 'show_follower'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followed
+    @following_count = Relationship.all.count(:followed_id)
+    @followers_count = Relationship.all.count(:follower_id)
+    render 'show_followed'
+  end
+  
   private
 
   def user_params
