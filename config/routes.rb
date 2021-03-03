@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'home/about' => "homes#about"
   post 'create/:id' => 'relationships#create', as:'follow'
   post 'destroy/:id' => 'relationships#destroy', as:'unfollow'
+  get '/search' => 'search#search'
   resources :users, only: [:index, :show, :edit, :update]  do
     member do
       get :following, :followers
