@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'homes#top'
   get 'home/about' => "homes#about"
-  post 'follow/:id' => 'relationships#follow', as:'follow'
-  post 'unfollow/:id' => 'relationships#unfollow', as:'unfollow'
+  post 'create/:id' => 'relationships#create', as:'follow'
+  post 'destroy/:id' => 'relationships#destroy', as:'unfollow'
   resources :users, only: [:index, :show, :edit, :update]  do
     member do
       get :following, :followers
