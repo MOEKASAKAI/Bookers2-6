@@ -1,15 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="text-danger">
-      <% if @book.errors.any? %>
-        <%= pluralize(@book.errors.count, "error") %> prohibited this obj from being saved:
-        <li>
-          <% @book.errors.full_messages.each do |message| %>
-            <%= message %>
-          <% end %>
-        </li>
-      <% end %>
-    </div>
+    <%= render 'shares/error_message', error: @book %>
   </div>
   <div class="row">
     <div class="col-md-3">
